@@ -11,6 +11,10 @@
   --accent: #00bfe0;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .two-columns {
   @apply grid grid-cols-2;
 }
@@ -31,6 +35,10 @@ input {
   @apply p-2 w-full rounded border outline-none mb-2 mt-2 placeholder:text-[.9rem];
 }
 
+select {
+  @apply p-2 w-full rounded border outline-none mb-2 mt-2 placeholder:text-[.9rem];
+}
+
 button {
   background-color: var(--primary);
   &:hover {
@@ -39,6 +47,17 @@ button {
   @apply w-full p-2 text-white rounded;
 }
 
-button:disabled{
+button:disabled {
   @apply bg-slate-600 cursor-not-allowed;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  background: #f4f4f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #dad7d7;
 }
