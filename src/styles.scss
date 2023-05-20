@@ -3,3 +3,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary: #395bbf;
+  --secondary: #2d4daa;
+  --success: #0c8a55;
+  --accent: #00bfe0;
+}
+
+.two-columns {
+  @apply grid grid-cols-2;
+}
+
+.three-columns {
+  @apply grid grid-cols-3;
+}
+
+.four-columns {
+  @apply grid grid-cols-4;
+}
+
+label {
+  @apply pl-1 text-gray-500 font-medium;
+}
+
+input {
+  @apply p-2 w-full rounded border outline-none mb-2 mt-2 placeholder:text-[.9rem];
+}
+
+button {
+  background-color: var(--primary);
+  &:hover {
+    background-color: var(--secondary);
+  }
+  @apply w-full p-2 text-white rounded;
+}
+
+button:disabled{
+  @apply bg-slate-600 cursor-not-allowed;
+}
