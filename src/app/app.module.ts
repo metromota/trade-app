@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 
-import { ApplicationModules } from '@core/application-modules';
+import { ApplicationModules } from '@core/common/application-modules';
 import { RouterModule } from '@angular/router';
 
 
@@ -17,6 +18,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     RouterModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot({}, {}),
     ...ApplicationModules
   ],
