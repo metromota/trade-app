@@ -1,0 +1,11 @@
+.dashboard {
+  @apply w-screen h-screen flex;
+}
+
+.dashboard-menu {
+  @apply w-[200px] bg-slate-300;
+}
+
+.dashboard-main {
+  @apply w-full;
+}
