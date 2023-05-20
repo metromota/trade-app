@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { Routes as PublicRoutes } from '@routing/public';
-import { Routes as PrivateRoutes } from '@routing/private';
+import { LoginComponent } from '@pages/public/login/login.component';
 
 const routes: Routes = [
-  ...PublicRoutes,
-  ...PrivateRoutes,
   {
-    path: '**',
-    redirectTo: ''
+    path: '',
+    pathMatch: 'full',
+    component: LoginComponent
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('@pages/private/dashboard/dashboard.module')
+      .then(m => m.DashboardModule)
   }
 ];
 

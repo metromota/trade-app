@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 
 import { ApplicationModules } from '@core/application-modules';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ApplicationModules } from '@core/application-modules';
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
     StoreModule.forRoot({}, {}),
     ...ApplicationModules
