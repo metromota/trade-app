@@ -1,4 +1,15 @@
-.formControl {
-  @apply mb-2 mt-2;
+.form-login {
+    @apply mt-10 mb-10;
 }
 
+.formControl {
+    @apply mb-2 mt-2;
+}
+
+.button-login {
+    background-color: var(--primary);
+    &:hover {
+        background-color: var(--secondary);
+    }
+    @apply text-white;
+}

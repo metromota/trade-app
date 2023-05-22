@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -11,7 +11,11 @@ export class FormComponent {
   formLogin: FormGroup;
   apikey: FormControl;
 
-  constructor(private formbuilder: FormBuilder) { }
+  @Output() login = new EventEmitter<string>();
+
+  constructor(
+    private formbuilder: FormBuilder,
+  ) { }
 
   ngOnInit() {
     this.createControls();
@@ -33,7 +37,8 @@ export class FormComponent {
   }
 
   submitLogin() {
-    console.log(this.formLogin.value)
+    const login = this.formLogin.value
+    this.login.emit(login)
   }
 
 }
