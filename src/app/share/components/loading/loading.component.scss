@@ -1,0 +1,21 @@
+.loading-page {
+    @apply w-full flex justify-center items-center;
+}
+
+.loading-container {
+    @apply w-auto h-auto;
+}
+
+@keyframes giroInfinito {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    display: block;
+    animation: giroInfinito 1s infinite;
+}
