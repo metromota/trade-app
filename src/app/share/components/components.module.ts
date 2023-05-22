@@ -4,21 +4,38 @@ import { TitleComponent } from './title/title.component';
 import { CardComponent } from './card/card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ErrorInputComponent } from './error-input/error-input.component';
+import { CardCountryComponent } from './card-country/card-country.component';
+import { CardSeasonComponent } from './card-season/card-season.component';
+import { CardLeaguesComponent } from './card-leagues/card-leagues.component';
+import { CardTeamsComponent } from './card-teams/card-teams.component';
+import { LoadingComponent } from './loading/loading.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     TitleComponent,
     CardComponent,
     ErrorInputComponent,
+    CardCountryComponent,
+    CardSeasonComponent,
+    CardLeaguesComponent,
+    CardTeamsComponent,
+    LoadingComponent,
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     TitleComponent,
     CardComponent,
     ErrorInputComponent,
+    CardCountryComponent,
+    CardSeasonComponent,
+    CardLeaguesComponent,
+    CardTeamsComponent,
+    LoadingComponent
   ]
 })
 export class ComponentsModule { }
