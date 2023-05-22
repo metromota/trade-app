@@ -11,6 +11,10 @@ const routes: Routes = [
                 path: '',
                 pathMatch: 'full',
                 loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomeModule)
+            },
+            {
+                path: 'team/:id',
+                loadChildren: () => import('./team/team.module').then(m => m.TeamModule)
             }
         ]
     }
