@@ -1,0 +1,20 @@
+.card-countries {
+    @apply flex gap-2 flex-col w-[150px] p-6 items-center border;
+}
+
+.card-countries img {
+    @apply object-cover aspect-square rounded-full border-none;
+}
+
+.card-countries button {
+    color: white;
+    background-color: var(--primary);
+    @apply text-center font-medium text-[.7rem];
+    &:hover {
+        background-color: var(--secondary);
+    }
+}
+
+.quad-img {
+    @apply w-full;
+}
