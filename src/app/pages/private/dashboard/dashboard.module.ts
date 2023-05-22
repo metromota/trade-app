@@ -4,6 +4,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { WelcomeModule } from './welcome/welcome.module';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
+import { TeamModule } from './team/team.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { DashboardComponent } from './dashboard.component';
     CommonModule,
     RouterModule,
     DashboardRoutingModule,
-    WelcomeModule
+    WelcomeModule,
+    TeamModule
   ],
 })
 export class DashboardModule { }

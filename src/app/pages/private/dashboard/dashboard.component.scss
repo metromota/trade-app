@@ -7,9 +7,10 @@
 }
 
 .dashboard-main-top{
-  @apply w-full h-[10%] bg-slate-400;
+  background-color: var(--primary);
+  @apply w-full h-[10%];
 }
 
 .dashboard-main-content{
-  @apply w-full bg-slate-100 h-[90%] scroll-auto; 
+  @apply flex w-full h-full justify-center items-center scroll-auto; 
 }
