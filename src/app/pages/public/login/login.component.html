@@ -1,6 +1,8 @@
 <div class="page-login">
   <trade-card>
-    <trade-title align="center">TradeApp</trade-title>
-    <trade-login-form></trade-login-form>
+    <trade-title align="center">Meu Time</trade-title>
+    <trade-login-form
+      (login)="authenticate($event)"
+    ></trade-login-form>
   </trade-card>
 </div>
