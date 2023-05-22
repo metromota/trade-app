@@ -1,0 +1,41 @@
+.card-leagues {
+    @apply w-full flex border rounded-md p-4 shadow-md bg-white;
+}
+
+.left-card-league{
+    @apply flex flex-col gap-4 p-4;
+}
+
+.left-card-league > img {
+    @apply w-full;
+}
+
+.right-card-league{
+    @apply flex flex-col pl-4 border-l-[1px];
+}
+
+.right-card-league > h2 {
+    color: var(--primary);
+    @apply font-semibold text-center;
+}
+
+.right-card-league > h3 {
+    @apply font-mono;
+}
+
+.right-card-league > h4 {
+    color: var(--primary);
+    @apply font-semibold mt-2 mb-2;
+}
+
+.right-card-league > ul {
+    @apply flex gap-2 flex-wrap;
+}
+
+.right-card-league ul > li {
+    @apply flex gap-2;
+}
+
+.button-season {
+    @apply border border-gray-100;
+}

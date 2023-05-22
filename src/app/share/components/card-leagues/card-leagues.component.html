@@ -1,0 +1,22 @@
+<div class="card-leagues">
+    <div class="left-card-league">
+        <img
+        src="{{ leagueItem.league.logo }}"
+        alt="{{ leagueItem.league.name }}"
+        />
+    </div>
+    <div class="right-card-league">
+        <h2>{{ leagueItem.league.name }}</h2>
+        <h3>- {{ leagueItem.country.name }}</h3>
+        <h4>Temporadas</h4>
+        <ul>
+            <li *ngFor="let season of leagueItem.seasons">
+                <trade-card-season
+                [season]="season.year"
+                (seasonClicked)="selectSeasonOfLeague($event)"
+            ></trade-card-season>
+            </li>
+        </ul>
+    </div>
+    <!-- <button (click)="changeCountry()" id="{{country.code}}">{{ country.name }}</button> -->
+</div>
