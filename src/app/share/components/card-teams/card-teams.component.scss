@@ -1,0 +1,15 @@
+.card-teams {
+    @apply border w-[200px] p-4 rounded shadow-md;
+}
+
+.quad-img {
+    @apply w-full mb-4;
+}
+
+.button-card-team {
+    background-color: var(--primary);
+    @apply border text-xs text-white flex gap-2 items-center;
+    &:hover {
+        background-color: var(--secondary);
+    }
+}
