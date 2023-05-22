@@ -1,63 +1,71 @@
-@import "@fortawesome/fontawesome-free/css/all.min.css"; // fontawesome import
+@import '@fortawesome/fontawesome-free/css/all.min.css'; // fontawesome import
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --primary: #395bbf;
-  --secondary: #2d4daa;
-  --success: #0c8a55;
-  --accent: #00bfe0;
+    --primary: #395bbf;
+    --secondary: #2d4daa;
+    --success: #0c8a55;
+    --accent: #00bfe0;
 }
 
 body {
-  scroll-behavior: smooth;
+    // scroll-behavior: smooth;
 }
 
 .two-columns {
-  @apply grid grid-cols-2;
+    @apply grid grid-cols-2 gap-2;
 }
 
 .three-columns {
-  @apply grid grid-cols-3;
+    @apply grid grid-cols-3 gap-2;
 }
 
 .four-columns {
-  @apply grid grid-cols-4;
+    @apply grid grid-cols-4 gap-2;
 }
 
 label {
-  @apply pl-1 text-gray-500 font-medium;
+    @apply pl-1 text-gray-500 font-medium;
 }
 
 input {
-  @apply p-2 w-full rounded border outline-none mb-2 mt-2 placeholder:text-[.9rem];
+    @apply p-2 w-full rounded border outline-none mb-2 mt-2 placeholder:text-[.9rem];
 }
 
 select {
-  @apply p-2 w-full rounded border outline-none mb-2 mt-2 placeholder:text-[.9rem];
+    @apply p-2 w-full rounded border outline-none mb-2 mt-2 placeholder:text-[.9rem];
 }
 
 button {
-  background-color: var(--primary);
-  &:hover {
-    background-color: var(--secondary);
-  }
-  @apply w-full p-2 text-white rounded;
+    @apply cursor-pointer w-full p-2 rounded;
 }
 
 button:disabled {
-  @apply bg-slate-600 cursor-not-allowed;
+    @apply cursor-not-allowed;
 }
 
-::-webkit-scrollbar-track {
-  background-color: #f4f4f4;
+button.primary {
+    background-color: var(--primary);
+    &:hover {
+        background-color: var(--secondary);
+    }
+    @apply text-white;
 }
-::-webkit-scrollbar {
-  width: 6px;
-  background: #f4f4f4;
+
+button.primary:disabled {
+    @apply bg-slate-600;
 }
-::-webkit-scrollbar-thumb {
-  background: #dad7d7;
+
+*::-webkit-scrollbar-track {
+    background-color: #f4f4f4;
+}
+*::-webkit-scrollbar {
+    width: 6px;
+    background: #f4f4f4;
+}
+*::-webkit-scrollbar-thumb {
+    background: #dad7d7;
 }
