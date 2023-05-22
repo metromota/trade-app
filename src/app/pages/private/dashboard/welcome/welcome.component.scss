@@ -1,15 +1,41 @@
 .welcome-page {
-  @apply p-4 flex w-full h-full justify-center items-center;
+    @apply p-4 w-full flex flex-col items-center;
 }
 
-.welcome-page p {
-  color: var(--primary);
-  text-shadow: 1px 1px 2px #00000080;
-  @apply text-center text-xl uppercase font-bold mt-6 mb-6;
+.container-countries {
+    @apply w-full bg-slate-200;
+}
+.container-leagues {
+    @apply w-full bg-slate-200;
+}
+.container-seasons {
+    @apply w-full bg-slate-200;
 }
 
-.result-search {
-  max-height: 500px;
-  overflow-x: auto;
-  @apply bg-white p-2 rounded drop-shadow-md;
+.container-teams {
+    @apply w-full bg-slate-200;
+}
+
+.archive-countries {
+    @apply flex flex-wrap gap-2 justify-center;
+}
+
+.archive-leagues {
+    @apply w-full grid grid-cols-2 gap-2;
+}
+
+.archive-seasons {
+    @apply flex flex-wrap gap-2 justify-center;
+}
+
+.archive-teams {
+    @apply flex flex-wrap gap-2 justify-center;
+}
+
+.card-countries {
+    @apply flex gap-2 flex-col w-[150px] p-6 items-center border;
+}
+
+.button-change {
+    @apply w-auto text-blue-900 font-semibold mt-4 mb-4 ;
 }
