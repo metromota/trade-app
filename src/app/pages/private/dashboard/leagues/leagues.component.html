@@ -1,5 +1,4 @@
-<!-- <ng-container *ngIf="countrySelected && !leagueSelected && !loading"> -->
-<ng-container *ngIf="true">
+<ng-container *ngIf="!!countrySelected && !loading"> 
     <trade-loading *ngIf="loading"></trade-loading>
 
     <div class="container-leagues">
