@@ -1,10 +1,10 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class LocalStorageService {
-    constructor() { }
+    constructor() {}
 
     set(key: string, value: any) {
         localStorage.setItem(key, JSON.stringify(value));
@@ -16,5 +16,9 @@ export class LocalStorageService {
 
     remove(key: string) {
         localStorage.removeItem(key);
+    }
+
+    clear() {
+        localStorage.clear();
     }
 }
