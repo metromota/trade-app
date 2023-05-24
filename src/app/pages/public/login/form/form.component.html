@@ -1,22 +1,26 @@
 <form [formGroup]="formLogin" (ngSubmit)="submitLogin()" class="form-login">
-  <div class="formControl">
-    <label for="apikey">Apikey</label>
-    <input
-      formControlName="apikey"
-      placeholder="Digite sua apikey"
-      required
-      name="apikey"
-      id="apikey"
-    />
-    <trade-error-input
-      [pristine]="apikey.pristine"
-      [errors]="apikey.errors"
-    ></trade-error-input>
-  </div>
+    <div class="formControl">
+        <label for="apikey">Apikey</label>
+        <input
+            formControlName="apikey"
+            placeholder="Digite sua apikey"
+            required
+            name="apikey"
+            id="apikey"
+        />
+        <trade-error-input
+            [pristine]="apikey.pristine"
+            [errors]="apikey.errors"
+        ></trade-error-input>
+    </div>
 
-  <div class="formControl">
-    <button [disabled]="formLogin.invalid" (click)="submitLogin()" class="button-login">
-      Login
-    </button>
-  </div>
+    <div class="formControl">
+        <button
+            [disabled]="formLogin.invalid"
+            (click)="submitLogin()"
+            class="button-login"
+        >
+            Login
+        </button>
+    </div>
 </form>
