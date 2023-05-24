@@ -1,0 +1,30 @@
+<ng-container *ngIf="!!leagueSelected && !loading">
+    <trade-loading *ngIf="loading"></trade-loading>
+
+    <div class="container-teams">
+        <button (click)="goToLeagues()" class="button-change">
+            <i class="fa-solid fa-earth-americas"></i>
+            Escolher outra Temporada
+        </button>
+
+        <trade-title>Qual time deseja conhecer?</trade-title>
+
+        <div
+            class="archive-teams"
+            *ngIf="teams.length && !loading; else elseBlock"
+        >
+            <div *ngFor="let teamItem of teams">
+                <trade-card-teams
+                    (teamItemClick)="teamSelected($event)"
+                    [teamItem]="teamItem"
+                ></trade-card-teams>
+            </div>
+        </div>
+
+        <ng-template #elseBlock>
+            <p *ngIf="!loading" class="empty">
+                Não foi possivel localizar nenhum time
+            </p>
+        </ng-template>
+    </div>
+</ng-container>
