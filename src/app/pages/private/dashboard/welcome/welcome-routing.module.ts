@@ -5,18 +5,15 @@ import { WelcomeComponent } from './welcome.component';
 
 const routes: Routes = [
     {
-        path: "",
-        pathMatch: "full",
+        path: '',
+        pathMatch: 'full',
         component: WelcomeComponent,
     },
-]
+];
 
 @NgModule({
     declarations: [],
-    imports: [
-        CommonModule,
-        RouterModule.forChild(routes)
-    ],
-    exports: [RouterModule]
+    imports: [CommonModule, RouterModule.forChild(routes)],
+    exports: [RouterModule],
 })
-export class WelcomeRountingModule { }
+export class WelcomeRountingModule {}

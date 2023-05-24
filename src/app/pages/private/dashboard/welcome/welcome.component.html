@@ -1,67 +1,24 @@
 <div class="welcome-page">
-    <ng-container *ngIf="loading">
-        <trade-loading></trade-loading>
-    </ng-container>
+    <trade-loading *ngIf="loading"></trade-loading>
 
-    <ng-container *ngIf="countries.length && !countrySelected && !loading">
+    <ng-container *ngIf="countries.length && !loading; else elseBlock">
         <div class="container-countries">
-            <trade-title align="center">Escolha o País</trade-title>
+            <trade-title>Escolha um País e conheça suas ligas</trade-title>
 
             <div class="archive-countries">
                 <div *ngFor="let country of countries">
                     <trade-card-country
-                        [@fade]
                         [country]="country"
-                        (countryChange)="selectCountry($event)"
+                        (countryChange)="goToCountry($event)"
                     ></trade-card-country>
                 </div>
             </div>
         </div>
     </ng-container>
 
-    <ng-container *ngIf="countrySelected && !leagueSelected && !loading">
-        <div class="container-leagues">
-            <button (click)="changeCountry()" class="button-change">
-                <i class="fa-solid fa-earth-americas"></i>
-                Escolher outro país
-            </button>
-
-            <trade-title align="center">Escolha uma Liga</trade-title>
-
-            <div *ngIf="countrySelected">
-                <div class="archive-leagues" *ngIf="seasons.length">
-                    <div *ngFor="let leagueItem of leagues">
-                        <trade-card-leagues
-                            [@fade]
-                            [leagueItem]="leagueItem"
-                            (selectSeason)="selectSeasonAndLeague($event)"
-                        ></trade-card-leagues>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ng-container>
-
-    <ng-container *ngIf="!!leagueSelected && !loading">
-        <div class="container-teams">
-            <button (click)="changeLeague()" class="button-change">
-                <i class="fa-solid fa-earth-americas"></i>
-                Escolher outra Temporada
-            </button>
-
-            <trade-title align="center">Escolha um Time</trade-title>
-
-            <div *ngIf="!!countrySelected">
-                <div class="archive-teams" *ngIf="!!teams.length">
-                    <div *ngFor="let teamItem of teams">
-                        <trade-card-teams
-                            [@fade]
-                            [teamItem]="teamItem"
-                            (selectTeam)="selectTeam($event)"
-                        ></trade-card-teams>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ng-container>
+    <ng-template #elseBlock>
+        <p *ngIf="!loading" class="empty">
+            Não foi possivel localizar nenhum país
+        </p>
+    </ng-template>
 </div>

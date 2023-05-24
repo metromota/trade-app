@@ -6,13 +6,13 @@ import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '@components/components.module';
 
 @NgModule({
-  declarations: [WelcomeComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    WelcomeRountingModule,
-    ComponentsModule
-  ],
-  exports: [WelcomeComponent]
+    declarations: [WelcomeComponent],
+    imports: [
+        CommonModule,
+        RouterModule,
+        WelcomeRountingModule,
+        ComponentsModule,
+    ],
+    exports: [WelcomeComponent],
 })
-export class WelcomeModule { }
+export class WelcomeModule {}
