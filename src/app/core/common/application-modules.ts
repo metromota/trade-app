@@ -1,7 +1,5 @@
-import { PagesModule } from "@pages/pages.module"
+import { PagesModule } from '@pages/pages.module';
 
-const ApplicationModules = [
-    PagesModule,
-]
+const ApplicationModules = [PagesModule];
 
-export { ApplicationModules }
+export { ApplicationModules };
