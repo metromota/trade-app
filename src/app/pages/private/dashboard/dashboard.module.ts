@@ -5,16 +5,17 @@ import { WelcomeModule } from './welcome/welcome.module';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { TeamModule } from './team/team.module';
-
+import { LeaguesModule } from './leagues/leagues.module';
 
 @NgModule({
-  declarations: [DashboardComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    DashboardRoutingModule,
-    WelcomeModule,
-    TeamModule
-  ],
+    declarations: [DashboardComponent],
+    imports: [
+        CommonModule,
+        RouterModule,
+        DashboardRoutingModule,
+        WelcomeModule,
+        TeamModule,
+        LeaguesModule,
+    ],
 })
-export class DashboardModule { }
+export class DashboardModule {}

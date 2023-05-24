@@ -1,16 +1,7 @@
 .dashboard {
-  @apply w-screen h-screen flex;
+    @apply w-auto h-auto flex justify-center items-center;
 }
 
-.dashboard-main {
-  @apply w-full;
-}
-
-.dashboard-main-top{
-  background-color: var(--primary);
-  @apply w-full h-[10%];
-}
-
-.dashboard-main-content{
-  @apply flex w-full h-full justify-center items-center scroll-auto; 
+.dashboard-main-content {
+    @apply flex w-[95%] md:w-[80%];
 }
