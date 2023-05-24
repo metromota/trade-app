@@ -3,10 +3,9 @@
         <img src="{{ teamItem.team.logo }}" alt="{{ teamItem.team.name }}" />
     </div>
     <button
-        (click)="teamClicked()"
         [id]="teamItem.team.id"
         class="button-card-team"
-        [routerLink]="['/dashboard/team', teamItem.team.id]"
+        (click)="handleClick(teamItem.team.id)"
     >
         <i class="fa-solid fa-eye"></i>
         {{ teamItem.team.name }}

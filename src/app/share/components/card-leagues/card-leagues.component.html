@@ -1,8 +1,8 @@
 <div class="card-leagues">
     <div class="left-card-league">
         <img
-        src="{{ leagueItem.league.logo }}"
-        alt="{{ leagueItem.league.name }}"
+            src="{{ leagueItem.league.logo }}"
+            alt="{{ leagueItem.league.name }}"
         />
     </div>
     <div class="right-card-league">
@@ -12,9 +12,9 @@
         <ul>
             <li *ngFor="let season of leagueItem.seasons">
                 <trade-card-season
-                [season]="season.year"
-                (seasonClicked)="selectSeasonOfLeague($event)"
-            ></trade-card-season>
+                    [season]="season.year"
+                    (seasonClicked)="selectSeasonOfLeague($event)"
+                ></trade-card-season>
             </li>
         </ul>
     </div>

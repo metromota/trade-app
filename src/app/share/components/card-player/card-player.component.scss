@@ -1,0 +1,6 @@
+.player-card {
+    @apply bg-white p-2 shadow-md rounded-md text-sm border;
+    > p {
+        @apply mt-1 mb-1;
+    }
+}

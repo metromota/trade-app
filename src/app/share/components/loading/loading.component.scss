@@ -1,9 +1,5 @@
 .loading-page {
-    @apply w-full flex justify-center items-center;
-}
-
-.loading-container {
-    @apply w-auto h-auto;
+    @apply min-w-full h-screen flex justify-center items-center;
 }
 
 @keyframes giroInfinito {
@@ -16,6 +12,7 @@
 }
 
 .spinner {
+    @apply w-auto h-auto;
     display: block;
     animation: giroInfinito 1s infinite;
 }

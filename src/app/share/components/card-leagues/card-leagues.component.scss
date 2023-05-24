@@ -1,8 +1,8 @@
 .card-leagues {
-    @apply w-full flex border rounded-md p-4 shadow-md bg-white;
+    @apply w-full flex border rounded-md p-4 shadow-md;
 }
 
-.left-card-league{
+.left-card-league {
     @apply flex flex-col gap-4 p-4;
 }
 
@@ -10,7 +10,7 @@
     @apply w-full;
 }
 
-.right-card-league{
+.right-card-league {
     @apply flex flex-col pl-4 border-l-[1px];
 }
 
