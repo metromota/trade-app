@@ -1,0 +1,35 @@
+<!-- <ng-container *ngIf="countrySelected && !leagueSelected && !loading"> -->
+<ng-container *ngIf="true">
+    <trade-loading *ngIf="loading"></trade-loading>
+
+    <div class="container-leagues">
+        <button (click)="goToCountries()" class="button-change">
+            <i class="fa-solid fa-earth-americas"></i>
+            Tente em outro país
+        </button>
+
+        <trade-title
+            >Clique na temporada e veja seus time naquele ano</trade-title
+        >
+
+        <div *ngIf="countrySelected">
+            <div
+                class="archive-leagues"
+                *ngIf="leagues.length && !loading; else elseBlock"
+            >
+                <div *ngFor="let leagueItem of leagues">
+                    <trade-card-leagues
+                        [leagueItem]="leagueItem"
+                        (selectSeason)="selectSeasonAndLeague($event)"
+                    ></trade-card-leagues>
+                </div>
+            </div>
+        </div>
+
+        <ng-template #elseBlock>
+            <p *ngIf="!loading" class="empty">
+                Não foi possivel localizar nenhuma liga
+            </p>
+        </ng-template>
+    </div>
+</ng-container>
