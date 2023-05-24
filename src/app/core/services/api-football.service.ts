@@ -1,20 +1,18 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Environment } from "@core/environments/enviroments";
-import { Observable } from "rxjs";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Security } from '@core/security/security';
+import { Observable } from 'rxjs';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class ApiFootbalService {
+    urlApi: string = Security.getApiUrl();
 
-    urlApi: string = Environment.getApiUrl();
+    constructor(private http: HttpClient) {}
 
-    constructor(private http: HttpClient) {
-    }
-
-    authentication(apikey: string): Observable<any> {
-        return this.http.get(`${this.urlApi}/authentication`);
+    authentication(): Observable<any> {
+        return this.http.get(`${this.urlApi}/status`);
     }
 
     getCountries(): Observable<any> {
@@ -34,11 +32,16 @@ export class ApiFootbalService {
     }
 
     getTeamsOfSeason(season: number, leagueid: number): Observable<any> {
-        return this.http.get(`${this.urlApi}/teams?league=${leagueid}&season=${season}`);
+        return this.http.get(
+            `${this.urlApi}/teams?league=${leagueid}&season=${season}`
+        );
     }
 
     getTeam(id: number): Observable<any> {
         return this.http.get(`${this.urlApi}/teams/${id}`);
     }
 
+    getLineups(id: number): Observable<any> {
+        return this.http.get(`${this.urlApi}/teams/statistics/${id}`);
+    }
 }

@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
 })
 export class AppComponent {
+    title = 'Meu Time';
 
-  title = 'Meu Time';
-
-  ngOnInit() {
-    document.title = this.title;
-  }
-
+    ngOnInit() {
+        document.title = this.title;
+    }
 }
