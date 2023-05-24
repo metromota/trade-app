@@ -1,1 +1,87 @@
-<p>{{team.name}}</p>
+<div class="team-page">
+    <trade-loading *ngIf="loading"></trade-loading>
+
+    <div>
+        <button (click)="gotToTeams()" class="button-change">
+            <i class="fa-solid fa-earth-americas"></i>
+            Escolher outro time
+        </button>
+    </div>
+
+    <div class="team-container" *ngIf="!!team">
+        <div class="team-logo">
+            <img [src]="team.logo" [alt]="team.name" />
+        </div>
+        <div class="team-side">
+            <p>
+                <strong>{{ team.code }} - {{ team.name }}</strong>
+            </p>
+            <p>País: {{ team.country }}</p>
+            <p>Ano Fundação: {{ team.founded }}</p>
+        </div>
+        <div class="team-side">
+            <p>
+                Estádio: <strong>{{ venue.name }}</strong>
+            </p>
+            <p>Cidade: {{ venue.city }}</p>
+            <p>Rua: {{ venue.address }}</p>
+            <p>Capacidade : {{ venue.capacity }}</p>
+        </div>
+    </div>
+
+    <div
+        class="players-container"
+        *ngIf="players.length && !loading; else elseBlock"
+    >
+        <div *ngFor="let player of players">
+            <trade-card-player [player]="player"></trade-card-player>
+        </div>
+    </div>
+
+    <ng-template #elseBlock>
+        <p *ngIf="!loading" class="empty">
+            Não foi possivel localizar nenhum time
+        </p>
+    </ng-template>
+
+    <div
+        class="lineups-container"
+        *ngIf="formationMostPLayed?.formation && formationMostPLayed?.played"
+    >
+        <p>
+            Formação mais utilizada:
+            <strong>{{ formationMostPLayed?.formation }}</strong>
+        </p>
+        <p>
+            Número de vezes utilizada:
+            <strong>{{ formationMostPLayed?.played }} </strong>
+        </p>
+    </div>
+
+    <div class="stats-container" *ngIf="wins && draws && loses">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Vitórias</th>
+                    <th scope="col">Empates</th>
+                    <th scope="col">Derrotas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ wins }}</td>
+                    <td>{{ draws }}</td>
+                    <td>{{ loses }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="graph-container">
+        <canvas #favorChart></canvas>
+    </div>
+
+    <div class="graph-container">
+        <canvas #againstChart></canvas>
+    </div>
+</div>

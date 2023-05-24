@@ -1,0 +1,62 @@
+.team-page {
+    @apply w-full;
+}
+
+.team-container {
+    @apply w-full flex flex-col lg:flex-row items-center;
+}
+
+.team-logo {
+    @apply w-[70%] md:w-[35%] lg:w-[25%] xl:w-[15%] justify-center items-center aspect-square rounded-full m-4 p-6;
+    > img {
+        @apply w-full;
+    }
+}
+
+.team-side {
+    @apply flex flex-col p-4 m-2 items-center md:items-start;
+}
+
+.players-container {
+    @apply flex flex-wrap gap-2 mt-10 w-full items-center justify-center;
+}
+
+.lineups-container {
+    @apply w-full mt-10 p-4 border;
+}
+
+.stats-container {
+    @apply w-full mt-10  mb-10 p-4 border;
+}
+
+.graph-container {
+    @apply w-full mt-10  mb-10 p-4 border flex justify-center items-center;
+}
+
+#myChart {
+    @apply w-full;
+}
+
+table {
+    @apply min-w-full divide-y divide-gray-200;
+}
+
+thead {
+    @apply bg-gray-50;
+}
+
+th {
+    @apply px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+tbody {
+    @apply bg-white divide-y divide-gray-200;
+}
+
+td {
+    @apply px-6 py-4 text-center whitespace-nowrap;
+}
+
+canvas {
+    @apply min-w-full md:min-w-[80%] lg:min-w-[50%] xl:min-w-[35%];
+}

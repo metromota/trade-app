@@ -5,17 +5,14 @@ import { TeamComponent } from './team.component';
 
 const routes: Routes = [
     {
-        path: "",
-        pathMatch: "full",
+        path: '',
+        pathMatch: 'full',
         component: TeamComponent,
     },
-]
+];
 @NgModule({
     declarations: [],
-    imports: [
-        CommonModule,
-        RouterModule.forChild(routes)
-    ],
-    exports: [RouterModule]
+    imports: [CommonModule, RouterModule.forChild(routes)],
+    exports: [RouterModule],
 })
-export class TeamRountingModule { }
+export class TeamRountingModule {}
